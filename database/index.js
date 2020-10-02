@@ -1,12 +1,13 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const knex = require('knex')({
   client: 'mysql',
   connection: {
-    host: 'localhost',
-    database: 'opt',
-    user: 'root',
-    password: 'N0rzh1ll'
-    //user: 'appuser',
-    //password: 'Password'
+    host: process.env.HOST,
+    database: process.env.DATABASE,
+    user: process.env.USERNAME,
+    password: process.env.PASSWORD
   }
 });
 
