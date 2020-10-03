@@ -10,7 +10,7 @@ router.get('/',(req,res)=>{
 
 router.get('/:id',(req,res)=>{
   db.select().from('ContactChannel').where('idContactChannel',req.params.id).then((data)=>{
-    res.send(data);
+    res.send(data[0]);
   });
 });
 
